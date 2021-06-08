@@ -1,1 +1,8 @@
-<p >pokemon works!</p>
+<div [class.PokemonLeft]="position === 'left'" [class.PokemonRight]="position === 'right'">
+  <img src="https://www.smogon.com/dex/media/sprites/xy/arceus.gif" alt="Pikachu"/>
+</div>
+<div [class.PokemonInfosLeft]="position === 'left'" [class.PokemonInfosRight]="position === 'right'">
+  <p class="PokemonName">{{pokemon.name}}</p>
+  <div class="PokemonHealthBar">++++++++++</div>
+  <p class="PokemonHealth">{{pokemon.health}} / {{pokemon.health}}</p>
+</div>
