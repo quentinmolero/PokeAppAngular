@@ -1,6 +1,14 @@
 #battle-pokemon-area {
   display: flex;
-  flex-direction: row;
+  position: relative;
   justify-content: space-between;
   align-items: center;
+  flex-direction: column;
+  background: white;
+  border: black solid 2px;
+  border-radius: 5px;
+  margin: 0 auto 50px;
+  height: 650px;
+  max-width: 99vw;
+  width: 80vw;
 }
