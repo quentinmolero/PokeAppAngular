@@ -10,9 +10,7 @@ import {LogsFight} from '../../models/logs';
   styleUrls: ['./battle.component.css']
 })
 export class BattleComponent implements OnInit {
-  logsFight: LogsFight | undefined;
-  right = 'right';
-  left = 'left';
+  logsFight: LogsFight[] = [];
 
   carapuce = new Pokemon({
     name: 'carapuce',
@@ -65,6 +63,7 @@ export class BattleComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    this.startAFight(this.carapuce, this.pikachu).then(r => console.log(r));
   }
 
   public async startAFight(pokemon1: Pokemon, pokemon2: Pokemon): Promise<Pokemon> {
@@ -78,36 +77,40 @@ export class BattleComponent implements OnInit {
       if (pokemon1 === pokemonWhoPlayInFirst) {
         const attackPokemonWhoPlayInFirst = pokemonWhoPlayInFirst.determineTheAttack();
         pokemonWhoPlayInFirst.executeAnAttack(attackPokemonWhoPlayInFirst, pokemon2);
-        this.logsFight = new LogsFight({
+        this.logsFight.push(new LogsFight({
           pokemonAttack: pokemonWhoPlayInFirst,
           pokemonTarget: pokemon2,
           attack: attackPokemonWhoPlayInFirst
-        });
+        }));
+        console.log(this.logsFight);
         if (pokemon2.health > 0) {
           const attackPokemon2 = pokemon2.determineTheAttack();
           pokemon2.executeAnAttack(attackPokemon2, pokemon1);
-          this.logsFight = new LogsFight({
+          this.logsFight.push(new LogsFight({
             pokemonAttack: pokemon2,
             pokemonTarget: pokemon1,
             attack: attackPokemon2
-          });
+          }));
+          console.log(this.logsFight);
         }
       }else {
         const attackPokemon2 = pokemon2.determineTheAttack();
         pokemon2.executeAnAttack(attackPokemon2, pokemon1);
-        this.logsFight = new LogsFight({
+        this.logsFight.push(new LogsFight({
           pokemonAttack: pokemon2,
           pokemonTarget: pokemon1,
           attack: attackPokemon2
-        });
+        }));
+        console.log(this.logsFight);
         if (pokemon1.health > 0) {
           const attackPokemon1 = pokemon1.determineTheAttack();
           pokemon1.executeAnAttack(attackPokemon1, pokemon2);
-          this.logsFight = new LogsFight({
+          this.logsFight.push(new LogsFight({
             pokemonAttack: pokemon2,
             pokemonTarget: pokemon1,
             attack: attackPokemon2
-          });
+          }));
+          console.log(this.logsFight);
         }
       }
     }
@@ -121,5 +124,6 @@ export class BattleComponent implements OnInit {
       setTimeout(resolve, delay);
     });
   }
+
 
 }
