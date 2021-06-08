@@ -11,6 +11,7 @@ import {LogsFight} from '../../models/logs';
 })
 export class BattleComponent implements OnInit {
   logsFight: LogsFight[] = [];
+  buttonValue = 'Play Fight';
 
   carapuce = new Pokemon({
     name: 'carapuce',
@@ -63,16 +64,14 @@ export class BattleComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.startAFight(this.carapuce, this.pikachu).then(r => console.log(r));
   }
 
-  public async startAFight(pokemon1: Pokemon, pokemon2: Pokemon): Promise<Pokemon> {
+  public async startAFight(pokemon1: Pokemon, pokemon2: Pokemon): Promise<Pokemon | void> {
 
     if (pokemon1.health <= 0 && pokemon2.health <= 0) {
       throw {name : 'PokemonsNoLifeException', message : 'Pokemon can\'t figth because they are dead'};
     }
-    while (pokemon1.health > 0 && pokemon2.health > 0) {
-      await this.delay(1000);
+    while (pokemon1.health > 0 && pokemon2.health > 0 && this.buttonValue === 'Stop Fight') {
       const pokemonWhoPlayInFirst = Turn.determineWhoAttackInFirst(pokemon1, pokemon2);
       if (pokemon1 === pokemonWhoPlayInFirst) {
         const attackPokemonWhoPlayInFirst = pokemonWhoPlayInFirst.determineTheAttack();
@@ -93,7 +92,7 @@ export class BattleComponent implements OnInit {
           }));
           console.log(this.logsFight);
         }
-      }else {
+      } else {
         const attackPokemon2 = pokemon2.determineTheAttack();
         pokemon2.executeAnAttack(attackPokemon2, pokemon1);
         this.logsFight.push(new LogsFight({
@@ -113,9 +112,14 @@ export class BattleComponent implements OnInit {
           console.log(this.logsFight);
         }
       }
+      await this.delay(1000);
+    }
+    if (pokemon1.health < 0) {
+      return pokemon2;
+    }else if (pokemon2.health < 0) {
+      return pokemon1;
     }
 
-    return pokemon1.health > 0 ? pokemon1 : pokemon2;
   }
 
   public async delay(delay: number): Promise<void> {
@@ -123,6 +127,15 @@ export class BattleComponent implements OnInit {
     return new Promise(function(resolve) {
       setTimeout(resolve, delay);
     });
+  }
+
+  public handlePlayClick(): void {
+    if (this.buttonValue === 'Play Fight') {
+      this.buttonValue = 'Stop Fight';
+      this.startAFight(this.carapuce, this.pikachu).then(r => console.log(r));
+    }else {
+      this.buttonValue = 'Play Fight';
+    }
   }
 
 
