@@ -117,9 +117,9 @@ export class BattleComponent implements OnInit {
       }
       await this.delay(1000);
     }
-    if (pokemon1.health < 0) {
+    if (pokemon1.health <= 0) {
       return pokemon2;
-    }else if (pokemon2.health < 0) {
+    }else if (pokemon2.health <= 0) {
       return pokemon1;
     }
 

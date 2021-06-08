@@ -40,5 +40,6 @@ export class Pokemon implements IPokemon{
   executeAnAttack(attack: IAttack, pokemon: Pokemon): void {
 
     pokemon.health -= attack.value;
+    pokemon.health = pokemon.health < 0 ? 0 : pokemon.health;
   }
 }

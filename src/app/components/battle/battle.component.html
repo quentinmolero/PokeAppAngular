@@ -2,5 +2,5 @@
   <app-pokemon position="left" [pokemon]="carapuce"></app-pokemon>
   <app-pokemon position="right" [pokemon]="pikachu"></app-pokemon>
 </div>
-<button (click)="handlePlayClick()" >{{buttonValue}}</button>
+<button [disabled]="pokemonWinner !== undefined" (click)="handlePlayClick()" >{{buttonValue}}</button>
 <app-log [pokemonWinner]="pokemonWinner" [logsFight]="logsFight"></app-log>
