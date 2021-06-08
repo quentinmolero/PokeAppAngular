@@ -1,5 +1,12 @@
-.pokemon{
+.PokemonLeft, .PokemonRight{
   position: absolute;
+}
+
+.PokemonLeft{
   bottom: 50px;
   left: 100px;
+}
+.PokemonRight{
+  top: 50px;
+  right: 100px;
 }
