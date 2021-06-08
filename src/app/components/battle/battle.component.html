@@ -1,3 +1,5 @@
-<app-pokemon></app-pokemon>
-<app-pokemon></app-pokemon>
-<app-log></app-log>
+<div id="battle-pokemon-area">
+  <app-pokemon [position]="left" [pokemon]="carapuce"></app-pokemon>
+  <app-pokemon [position]="rigth" [pokemon]="pikachu"></app-pokemon>
+</div>
+<app-log [logsFight]="logsFight"></app-log>

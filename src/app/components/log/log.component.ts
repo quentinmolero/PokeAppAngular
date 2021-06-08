@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {Pokemon} from '../../models/pokemon';
+import {LogsFight} from '../../models/logs';
 
 @Component({
   selector: 'app-log',
@@ -7,9 +9,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LogComponent implements OnInit {
 
+  @Input() logsFight: LogsFight | undefined;
   constructor() { }
 
   ngOnInit(): void {
   }
-
 }
