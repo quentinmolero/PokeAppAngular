@@ -1,5 +1,12 @@
-<p>log works!</p>
-<p *ngFor="let logFight of logsFight">
-  {{logFight.pokemonAttack}}
-  {{logFight.pokemonTarget}}
-</p>
+<div class="battleLogDiv">
+<!--  <p class="winner">Charizard is winning</p>-->
+  <div *ngFor="let logFight of logsFight">
+    <div class="log">
+      <p class="logPokemonName">{{logFight.pokemonAttack.name}}</p>
+      used {{logFight.attack.name}} against
+      <p class="logPokemonName">{{logFight.pokemonTarget.name}}</p>
+      and did
+      <p class="logAttackDamage">{{logFight.attack.value}} damages</p>
+    </div>
+  </div>
+</div>

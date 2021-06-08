@@ -1,0 +1,37 @@
+.battleLogDiv {
+  display: flex;
+  flex-direction: column;
+  background: white;
+  border: #000000 solid 2px;
+  border-radius: 5px;
+  margin: 0 auto;
+  height: 800px;
+  max-width: 99vw;
+  width: 80vw;
+  word-wrap: break-word;
+}
+
+.winner {
+  color: #ff0000;
+  font-size: 1.6em;
+  text-align: center;
+}
+
+.log {
+  display: flex;
+  flex-direction: row;
+  font-size: 1.2em;
+  justify-content: center;
+}
+
+.log p {
+  margin: 0 1vw;
+}
+
+.logPokemonName {
+  color: #000088;
+}
+
+.logAttackDamage {
+  color: #ff0000;
+}
