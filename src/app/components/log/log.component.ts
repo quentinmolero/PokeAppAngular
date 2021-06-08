@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {LogsFight} from '../../models/logs';
+import {Pokemon} from '../../models/pokemon';
 
 @Component({
   selector: 'app-log',
@@ -9,6 +10,7 @@ import {LogsFight} from '../../models/logs';
 export class LogComponent implements OnInit {
 
   @Input() logsFight: LogsFight[] | undefined;
+  @Input() pokemonWinner: Pokemon | undefined;
   constructor() { }
 
   ngOnInit(): void {

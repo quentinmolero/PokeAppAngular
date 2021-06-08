@@ -12,6 +12,7 @@ import {LogsFight} from '../../models/logs';
 export class BattleComponent implements OnInit {
   logsFight: LogsFight[] = [];
   buttonValue = 'Play Fight';
+  pokemonWinner: Pokemon | undefined;
 
   carapuce = new Pokemon({
     name: 'carapuce',
@@ -129,10 +130,11 @@ export class BattleComponent implements OnInit {
     });
   }
 
-  public handlePlayClick(): void {
+  public async handlePlayClick(): Promise<void> {
     if (this.buttonValue === 'Play Fight') {
       this.buttonValue = 'Stop Fight';
-      this.startAFight(this.carapuce, this.pikachu).then(r => console.log(r));
+      const result = await this.startAFight(this.carapuce, this.pikachu);
+      this.pokemonWinner = result ? result : undefined;
     }else {
       this.buttonValue = 'Play Fight';
     }
