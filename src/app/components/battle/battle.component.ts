@@ -15,6 +15,7 @@ export class BattleComponent implements OnInit {
   pokemonWinner: Pokemon | undefined;
 
   carapuce = new Pokemon({
+    maxHealth: 80,
     name: 'carapuce',
     health: 80,
     speed: 80,
@@ -39,6 +40,7 @@ export class BattleComponent implements OnInit {
   );
 
   pikachu = new Pokemon({
+    maxHealth: 80,
     name: 'pikachu',
     health: 80,
     speed: 70,

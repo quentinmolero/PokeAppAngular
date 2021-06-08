@@ -8,6 +8,7 @@ export interface IPokemon {
   health: number;
   speed: number;
   attacks: IAttack[];
+  maxHealth: number;
 }
 
 export class Pokemon implements IPokemon{
@@ -16,12 +17,14 @@ export class Pokemon implements IPokemon{
   health: number;
   speed: number;
   attacks: IAttack[];
+  maxHealth: number;
 
   constructor(props: IPokemon) {
     this.name = props.name;
     this.health = props.health;
     this.speed = props.speed;
     this.attacks = props.attacks;
+    this.maxHealth = props.health;
   }
 
   toString(): string {
