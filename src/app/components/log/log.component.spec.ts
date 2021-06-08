@@ -11,6 +11,7 @@ describe('LogComponent', () => {
   const carapuce = new Pokemon({
     name: 'carapuce',
     health: 80,
+    maxHealth: 80,
     speed: 80,
     attacks: [{
         name: 'charge',
@@ -30,6 +31,7 @@ describe('LogComponent', () => {
   const pikachu = new Pokemon({
     name: 'pikachu',
     health: 80,
+    maxHealth: 80,
     speed: 70,
     attacks: [{
         name: 'charge',
