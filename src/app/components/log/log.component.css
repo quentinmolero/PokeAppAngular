@@ -1,0 +1,10 @@
+.battleLogDiv {
+  background: white;
+  border: #000000 solid 2px;
+  border-radius: 5px;
+  margin: 0 auto;
+  height: 800px;
+  max-width: 99vw;
+  width: 80vw;
+  word-wrap: break-word;
+}
