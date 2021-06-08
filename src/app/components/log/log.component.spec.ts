@@ -67,15 +67,13 @@ describe('LogComponent', () => {
 
   it('should be empty when no fight has to be logged', () => {
     fixture.detectChanges();
-    view = view.querySelector('.battleLogDiv');
-    expect(view.innerHTML).toBe('<!--bindings={}-->');
+    expect(view.querySelector('.battleLogDiv').innerHTML).toBe('<!--bindings={}-->');
   });
 
   it('shouldn\'t be empty when 1 combat action was made', () => {
     component.logsFight = [new LogsFight({pokemonAttack: carapuce, pokemonTarget: pikachu, attack: carapuce.attacks[0]})];
     fixture.detectChanges();
-    view = view.querySelector('.log');
-    expect(view.innerHTML).toBe('<p class="logPokemonName">carapuce</p> used charge against <p class="logPokemonName">pikachu</p> and did <p class="logAttackDamage">10 damages</p>');
+    expect(view.querySelector('.log').textContent).toContain('carapuce used charge against pikachu and did 10 damages');
   });
 
   it('shouldn\'t be empty when 3 combat actions was made', () => {
@@ -83,9 +81,8 @@ describe('LogComponent', () => {
     component.logsFight.push(new LogsFight({pokemonAttack: pikachu, pokemonTarget: carapuce, attack: pikachu.attacks[0]}));
     component.logsFight.push(new LogsFight({pokemonAttack: carapuce, pokemonTarget: pikachu, attack: carapuce.attacks[0]}));
     fixture.detectChanges();
-    view = view.querySelectorAll('.log');
-    expect(view[0].innerHTML).toBe('<p class="logPokemonName">carapuce</p> used charge against <p class="logPokemonName">pikachu</p> and did <p class="logAttackDamage">10 damages</p>');
-    expect(view[1].innerHTML).toBe('<p class="logPokemonName">pikachu</p> used charge against <p class="logPokemonName">carapuce</p> and did <p class="logAttackDamage">10 damages</p>');
-    expect(view[2].innerHTML).toBe('<p class="logPokemonName">carapuce</p> used charge against <p class="logPokemonName">pikachu</p> and did <p class="logAttackDamage">10 damages</p>');
+    expect(view.querySelectorAll('.log')[0].textContent).toContain('carapuce used charge against pikachu and did 10 damages');
+    expect(view.querySelectorAll('.log')[1].textContent).toContain('pikachu used charge against carapuce and did 10 damages');
+    expect(view.querySelectorAll('.log')[2].textContent).toContain('carapuce used charge against pikachu and did 10 damages');
   });
 });
