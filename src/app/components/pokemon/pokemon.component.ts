@@ -14,5 +14,4 @@ export class PokemonComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
 }

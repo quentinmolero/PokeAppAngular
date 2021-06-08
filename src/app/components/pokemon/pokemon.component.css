@@ -1,0 +1,35 @@
+.PokemonLeft, .PokemonRight{
+  position: absolute;
+}
+
+.PokemonLeft{
+  bottom: 50px;
+  left: 100px;
+}
+.PokemonRight{
+  top: 50px;
+  right: 100px;
+}
+
+.PokemonInfosLeft, .PokemonInfosRight{
+  position: absolute;
+  background-color: white;
+  border: black solid 1px;
+  border-radius: 5px;
+  padding: 1em;
+}
+
+.PokemonInfosLeft{
+  text-align: left;
+  bottom: 50px;
+  left: 200px;
+}
+.PokemonInfosRight{
+  text-align: right;
+  top: 50px;
+  right: 200px;
+}
+
+.PokemonInfosRight .PokemonHealth {
+  display: none;
+}
