@@ -1,5 +1,5 @@
 <div class="battleLogDiv">
-<!--  <p class="winner">Charizard is winning</p>-->
+  <p *ngIf="pokemonWinner !== undefined" class="logWinner">{{pokemonWinner.name}} is winning</p>
   <div *ngFor="let logFight of logsFight">
     <div class="log">
       <p class="logPokemonName">{{logFight.pokemonAttack.name}}</p>

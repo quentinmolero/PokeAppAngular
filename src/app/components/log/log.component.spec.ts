@@ -69,7 +69,7 @@ describe('LogComponent', () => {
 
   it('should be empty when no fight has to be logged', () => {
     fixture.detectChanges();
-    expect(view.querySelector('.battleLogDiv').innerHTML).toBe('<!--bindings={}-->');
+    expect(view.querySelector('.battleLogDiv').innerText).toBe(undefined);
   });
 
   it('shouldn\'t be empty when 1 combat action was made', () => {
@@ -86,5 +86,16 @@ describe('LogComponent', () => {
     expect(view.querySelectorAll('.log')[0].textContent).toContain('carapuce used charge against pikachu and did 10 damages');
     expect(view.querySelectorAll('.log')[1].textContent).toContain('pikachu used charge against carapuce and did 10 damages');
     expect(view.querySelectorAll('.log')[2].textContent).toContain('carapuce used charge against pikachu and did 10 damages');
+  });
+
+  it('shouldn\'t be in the html while no pokemon won', () => {
+    fixture.detectChanges();
+    expect(view.querySelector('.logWinner')).toBe(null);
+  });
+
+  it('should be in the html when a pokemon won', () => {
+    component.pokemonWinner = carapuce;
+    fixture.detectChanges();
+    expect(view.querySelector('.logWinner').textContent).toContain('carapuce is winning');
   });
 });
