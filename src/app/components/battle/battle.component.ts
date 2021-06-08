@@ -11,6 +11,8 @@ import {LogsFight} from '../../models/logs';
 })
 export class BattleComponent implements OnInit {
   logsFight: LogsFight | undefined;
+  right = 'right';
+  left = 'left';
 
   carapuce = new Pokemon({
     name: 'carapuce',
