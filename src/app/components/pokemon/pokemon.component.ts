@@ -7,8 +7,8 @@ import {Pokemon} from '../../models/pokemon';
   styleUrls: ['./pokemon.component.css']
 })
 export class PokemonComponent implements OnInit {
-  @Input() pokemon!: Pokemon;
-  @Input() position!: string;
+  @Input() pokemon: Pokemon | undefined;
+  @Input() position: string | undefined;
 
   constructor() { }
 
