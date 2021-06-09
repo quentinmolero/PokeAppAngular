@@ -6,7 +6,7 @@ import {Pokemon} from '../../models/pokemon';
 describe('PokemonComponent', () => {
   let component: PokemonComponent;
   let fixture: ComponentFixture<PokemonComponent>;
-  let view: any;
+  let dom: any;
 
   const carapuce = new Pokemon({
     name: 'carapuce',
@@ -61,13 +61,47 @@ describe('PokemonComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(PokemonComponent);
     component = fixture.componentInstance;
-    view = fixture.debugElement.nativeElement;
-    component.pokemon = carapuce;
+    dom = fixture.nativeElement;
+    component.pokemon = pikachu;
     component.position = 'left';
     fixture.detectChanges();
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('PokemonName should be carapuce', () => {
+    dom = fixture.nativeElement;
+    component.pokemon = carapuce;
+    component.position = 'left';
+    fixture.detectChanges();
+    expect(dom.innerHTML).toContain('<p class="PokemonName">carapuce</p>');
+  });
+
+  it('carapuce should have 80 / 80 for HP', () => {
+    dom = fixture.nativeElement;
+    component.pokemon = carapuce;
+    component.position = 'left';
+    fixture.detectChanges();
+    expect(dom.innerHTML).toContain('<p class="PokemonHealth">80 / 80</p>');
+  });
+
+  it('should have the PokemonLeft property if the pokemon position is on the left', () => {
+    dom = fixture.nativeElement;
+    component.pokemon = carapuce;
+    component.position = 'left';
+    fixture.detectChanges();
+    expect(dom.innerHTML).toContain('<div class="PokemonLeft"');
+    expect(dom.innerHTML).toContain('<div class="PokemonInfosLeft"');
+  });
+
+  it('should have the PokemonRight property if the pokemon position is on the right', () => {
+    dom = fixture.nativeElement;
+    component.pokemon = carapuce;
+    component.position = 'right';
+    fixture.detectChanges();
+    expect(dom.innerHTML).toContain('<div class="PokemonRight"');
+    expect(dom.innerHTML).toContain('<div class="PokemonInfosRight"');
   });
 });
