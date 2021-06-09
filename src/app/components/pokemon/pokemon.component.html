@@ -1,10 +1,13 @@
-<div [class.PokemonLeft]="position === 'left'" [class.PokemonRight]="position === 'right'">
+<div [ngClass]="{'PokemonLeft': position === 'left', 'PokemonRight': position === 'right'}">
   <img src="https://www.smogon.com/dex/media/sprites/xy/arceus.gif" alt="Pikachu"/>
 </div>
-<div [class.PokemonInfosLeft]="position === 'left'" [class.PokemonInfosRight]="position === 'right'">
+<div [ngClass]="{'PokemonInfosLeft': position === 'left', 'PokemonInfosRight': position === 'right'}">
   <p class="PokemonName">{{pokemon?.name}}</p>
   <div class="PokemonHealthBar">
-    <div class="PokemonHealthLeftBar"></div>
+    <div
+      [ngClass]="{'PokemonLeftHealthLeftBar': position === 'left', 'PokemonRightHealthLeftBar': position === 'right'}"
+      [ngStyle]="{'width': pokemon !== undefined ? 'calc(' + (pokemon.health/pokemon.maxHealth)*100 + '%)': 0}"
+    ></div>
   </div>
   <p class="PokemonHealth">{{pokemon?.health}} / {{pokemon?.maxHealth}}</p>
 </div>

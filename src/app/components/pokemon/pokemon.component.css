@@ -1,7 +1,6 @@
 .PokemonLeft, .PokemonRight{
   position: absolute;
 }
-
 .PokemonLeft{
   bottom: 50px;
   left: 100px;
@@ -19,7 +18,6 @@
   padding: 1em;
   min-width: 200px;
 }
-
 .PokemonInfosLeft{
   text-align: left;
   bottom: 50px;
@@ -41,8 +39,15 @@
   width: 100%;
 }
 
-.PokemonHealthLeftBar {
-  background-color: green;
+.PokemonLeftHealthLeftBar, .PokemonRightHealthLeftBar{
   height: 100%;
+  transition-duration: 1s
+}
+.PokemonLeftHealthLeftBar {
+  background-color: green;
+  width: 100%;
+}
+.PokemonRightHealthLeftBar {
+  background-color: green;
   width: 100%;
 }
