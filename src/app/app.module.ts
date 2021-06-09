@@ -21,4 +21,5 @@ import { LogComponent } from './components/log/log.component';
   providers: [],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }

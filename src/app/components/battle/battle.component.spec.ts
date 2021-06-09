@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { BattleComponent } from './battle.component';
+import {CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
+import {PokemonComponent} from '../pokemon/pokemon.component';
 
 describe('BattleComponent', () => {
   let component: BattleComponent;
@@ -8,7 +10,13 @@ describe('BattleComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ BattleComponent ]
+      declarations: [
+        BattleComponent,
+        PokemonComponent
+      ],
+      schemas: [
+        CUSTOM_ELEMENTS_SCHEMA
+      ]
     })
     .compileComponents();
   });
@@ -20,6 +28,10 @@ describe('BattleComponent', () => {
   });
 
   it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+
+  it('should display 2 pokemons', () => {
     expect(component).toBeTruthy();
   });
 });

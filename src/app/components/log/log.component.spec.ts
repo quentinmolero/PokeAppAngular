@@ -13,6 +13,7 @@ describe('LogComponent', () => {
     health: 80,
     maxHealth: 80,
     speed: 80,
+    color: 'blue',
     attacks: [{
         name: 'charge',
         value: 10
@@ -33,6 +34,7 @@ describe('LogComponent', () => {
     health: 80,
     maxHealth: 80,
     speed: 70,
+    color: 'yellow',
     attacks: [{
         name: 'charge',
         value: 10
