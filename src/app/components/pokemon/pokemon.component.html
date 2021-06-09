@@ -4,7 +4,10 @@
 <div [ngClass]="{'PokemonInfosLeft': position === 'left', 'PokemonInfosRight': position === 'right'}">
   <p class="PokemonName">{{pokemon.name}}</p>
   <div class="PokemonHealthBar">
-    <div [ngClass]="{'PokemonLeftHealthLeftBar': position === 'left', 'PokemonRightHealthLeftBar': position === 'right'}"></div>
+    <div
+      [ngClass]="{'PokemonLeftHealthLeftBar': position === 'left', 'PokemonRightHealthLeftBar': position === 'right'}"
+      [ngStyle]="{'width': 'calc(' + (pokemon.health/pokemon.maxHealth)*100 + '%)'}"
+    ></div>
   </div>
   <p class="PokemonHealth">{{pokemon.health}} / {{pokemon.maxHealth}}</p>
 </div>

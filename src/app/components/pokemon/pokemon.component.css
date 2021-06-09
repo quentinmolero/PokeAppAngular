@@ -41,6 +41,7 @@
 
 .PokemonLeftHealthLeftBar, .PokemonRightHealthLeftBar{
   height: 100%;
+  transition-duration: 1s
 }
 .PokemonLeftHealthLeftBar {
   background-color: green;
