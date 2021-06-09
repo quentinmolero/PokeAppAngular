@@ -1,12 +1,13 @@
 .battleLogDiv {
-  display: flex;
-  flex-direction: column;
   background: white;
   border: #000000 solid 2px;
   border-radius: 5px;
-  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
   height: 800px;
+  margin: 0 auto;
   max-width: 99vw;
+  overflow-y: auto;
   width: 80vw;
   word-wrap: break-word;
 }
@@ -20,16 +21,15 @@
 .log {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   font-size: 1.2em;
   justify-content: center;
+  word-break: keep-all;
+  margin-bottom: 12px;
 }
 
 .log p {
   margin: 0 1vw;
-}
-
-.logPokemonName {
-  color: #000088;
 }
 
 .logAttackDamage {
