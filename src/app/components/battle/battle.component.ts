@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import {Pokemon} from '../../models/pokemon';
-import {Turn} from '../../game/turn';
-import {LogsFight} from '../../models/logs';
 import {BattleService} from '../../services/battle.service';
 
 

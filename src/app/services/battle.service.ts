@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import {Pokemon} from '../models/pokemon';
-import {Turn} from '../game/turn';
 import {LogsFight} from '../models/logs';
 
 @Injectable({
@@ -70,7 +69,8 @@ export class BattleService {
     this.logsFight.push(new LogsFight({
       pokemonAttack,
       pokemonTarget,
-      attack
+      attack,
+      date: new Date()
     }));
   }
 }
