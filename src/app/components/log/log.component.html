@@ -2,11 +2,12 @@
   <p *ngIf="pokemonWinner !== undefined" class="logWinner">{{pokemonWinner.name}} is winning</p>
   <div *ngFor="let logFight of logsFight">
     <div class="log">
+      <p class="logDate">{{logFight.date | date:'HH:mm:ss'}}</p>
       <p class="logPokemonName" [appPokemonNameColor]="logFight.pokemonAttack.color">{{logFight.pokemonAttack.name}}</p>
       used {{logFight.attack.name}} against
       <p class="logPokemonName" [appPokemonNameColor]="logFight.pokemonTarget.color">{{logFight.pokemonTarget.name}}</p>
       and did
-      <p class="logAttackDamage">{{logFight.attack.value}} damages</p>
+      <p class="logAttackDamage">{{logFight.attack.value | number:'3.0'}} damages</p>
     </div>
   </div>
 </div>

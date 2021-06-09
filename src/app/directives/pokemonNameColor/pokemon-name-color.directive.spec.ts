@@ -21,13 +21,7 @@ describe('PokemonNameColorDirective', () => {
 
   beforeEach(() => {
     fixture = TestBed.createComponent(TestComponent);
-    // grab the renderer
     renderer2 = fixture.componentRef.injector.get<Renderer2>(Renderer2 as Type<Renderer2>);
-    // and spy on it
-    // jest.spyOn(renderer2, 'setStyle').mockImplementation();
-    // or replace
-    // spyOn(renderer2, 'addClass').and.callFake(..);
-    // etc
   });
 
   it('should create an instance', () => {

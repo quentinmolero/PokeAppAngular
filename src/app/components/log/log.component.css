@@ -32,6 +32,10 @@
   margin: 0 1vw;
 }
 
+.logDate {
+  font-weight: bold;
+}
+
 .logAttackDamage {
   color: #ff0000;
 }
