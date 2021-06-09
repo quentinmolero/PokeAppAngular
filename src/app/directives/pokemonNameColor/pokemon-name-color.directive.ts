@@ -9,7 +9,6 @@ export class PokemonNameColorDirective implements OnInit{
   @Input() appPokemonNameColor!: string;
 
   constructor(private element: ElementRef, private renderer: Renderer2) {
-    console.log('called');
     renderer.setStyle(element.nativeElement, 'color', this.appPokemonNameColor);
   }
   ngOnInit(): void {
