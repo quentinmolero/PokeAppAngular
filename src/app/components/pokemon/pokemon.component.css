@@ -17,6 +17,7 @@
   border: black solid 1px;
   border-radius: 5px;
   padding: 1em;
+  min-width: 200px;
 }
 
 .PokemonInfosLeft{
@@ -32,4 +33,16 @@
 
 .PokemonInfosRight .PokemonHealth {
   display: none;
+}
+
+.PokemonHealthBar {
+  border: black solid 1px;
+  height: 1em;
+  width: 100%;
+}
+
+.PokemonHealthLeftBar {
+  background-color: green;
+  height: 100%;
+  width: 100%;
 }
