@@ -10,6 +10,7 @@ describe('LogComponent', () => {
   let view: any;
   const carapuce = new Pokemon({
     name: 'carapuce',
+    color: 'blue',
     health: 80,
     maxHealth: 80,
     speed: 80,
@@ -30,6 +31,7 @@ describe('LogComponent', () => {
   );
   const pikachu = new Pokemon({
     name: 'pikachu',
+    color: 'yellow',
     health: 80,
     maxHealth: 80,
     speed: 70,
