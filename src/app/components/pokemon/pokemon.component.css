@@ -43,11 +43,12 @@
   height: 100%;
   transition-duration: 1s
 }
-.PokemonLeftHealthLeftBar {
+.PokemonHealthLeftBarNormal {
   background-color: green;
-  width: 100%;
 }
-.PokemonRightHealthLeftBar {
-  background-color: green;
-  width: 100%;
+.PokemonHealthLeftBarLow {
+  background-color: yellow;
+}
+.PokemonHealthLeftBarCritical {
+  background-color: red;
 }
