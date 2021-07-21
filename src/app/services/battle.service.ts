@@ -43,8 +43,7 @@ export class BattleService {
   }
 
   private async delay(delay: number): Promise<void> {
-    // tslint:disable-next-line:only-arrow-functions typedef
-    return new Promise(function(resolve) {
+    return new Promise((resolve)  => {
       setTimeout(resolve, delay);
     });
   }

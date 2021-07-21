@@ -19,7 +19,7 @@ describe('BattleService', () => {
       health: 90,
       speed: 20,
       maxHealth: 90,
-      color: 'purple',
+      type: 'purple',
       attacks: [
         {
           name: 'charge',
@@ -45,7 +45,7 @@ describe('BattleService', () => {
       health: 80,
       speed: 70,
       maxHealth: 80,
-      color: 'yellow',
+      type: 'yellow',
       attacks: [
         {
           name: 'eclair',
@@ -112,9 +112,6 @@ describe('BattleService', () => {
 
       expect(service.pokemonWinner).toBe(papilusion);
       expect(service.buttonText).toBe('Play Fight');
-
     });
   });
-
-
 });
