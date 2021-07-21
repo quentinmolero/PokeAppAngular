@@ -101,6 +101,6 @@ describe('LogComponent', () => {
   it('should be in the html when a pokemon won', () => {
     component.pokemonWinner = carapuce;
     fixture.detectChanges();
-    expect(view.querySelector('.logWinner').textContent).toContain('carapuce is winning');
+    expect(view.querySelector('.logWinner').textContent).toContain('carapuce won the duel');
   });
 });

@@ -5,8 +5,11 @@
   <p class="PokemonName">{{pokemon?.name}}</p>
   <div class="PokemonHealthBar">
     <div
-      [ngClass]="{'PokemonLeftHealthLeftBar': position === 'left', 'PokemonRightHealthLeftBar': position === 'right'}"
-      [ngStyle]="{'width': pokemon !== undefined ? 'calc(' + (pokemon.health/pokemon.maxHealth)*100 + '%)': 0}"
+      [ngClass]="{'PokemonLeftHealthLeftBar': position === 'left', 'PokemonRightHealthLeftBar': position === 'right',
+                  'PokemonHealthLeftBarNormal': pokemon === undefined || (pokemon.health/pokemon.maxHealth)*100 > 50,
+                  'PokemonHealthLeftBarLow': pokemon !== undefined && (pokemon.health/pokemon.maxHealth)*100 <= 50 && (pokemon.health/pokemon.maxHealth)*100 > 25,
+                  'PokemonHealthLeftBarCritical': pokemon !== undefined && (pokemon.health/pokemon.maxHealth)*100 <= 25}"
+      [ngStyle]="{'width': pokemon !== undefined ? 'calc(' + (pokemon.health/pokemon.maxHealth)*100 + '%)': 100}"
     ></div>
   </div>
   <p class="PokemonHealth">{{pokemon?.health}} / {{pokemon?.maxHealth}}</p>
