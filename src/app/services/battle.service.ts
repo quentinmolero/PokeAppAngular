@@ -12,7 +12,7 @@ export class BattleService {
 
   constructor() { }
 
-  public async startAFight(pokemon1: Pokemon, pokemon2: Pokemon): Promise<Pokemon | void> {
+  private async startAFight(pokemon1: Pokemon, pokemon2: Pokemon): Promise<Pokemon | void> {
 
     if (pokemon1.health <= 0 && pokemon2.health <= 0) {
       throw {name : 'PokemonsNoLifeException', message : 'Pokemon can\'t figth because they are dead'};
