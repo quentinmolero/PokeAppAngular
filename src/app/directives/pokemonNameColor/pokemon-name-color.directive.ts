@@ -5,7 +5,6 @@ import {Directive, ElementRef, Input, OnInit, Renderer2} from '@angular/core';
 })
 
 export class PokemonNameColorDirective implements OnInit{
-
   @Input() appPokemonNameColor!: string;
 
   constructor(private element: ElementRef, private renderer: Renderer2) {

@@ -7,6 +7,7 @@ import { PokemonComponent } from './components/pokemon/pokemon.component';
 import { BattleComponent } from './components/battle/battle.component';
 import { LogComponent } from './components/log/log.component';
 import { PokemonNameColorDirective } from './directives/pokemonNameColor/pokemon-name-color.directive';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { PokemonNameColorDirective } from './directives/pokemonNameColor/pokemon
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

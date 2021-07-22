@@ -1,6 +1,7 @@
 export interface IAttack {
   name: string;
   value: number;
+  detailUrl?: string;
 }
 
 export interface IPokemon {

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {Pokemon} from '../../models/pokemon';
 import {BattleService} from '../../services/battle.service';
+import {ListPokemonService} from '../../services/poke-api/list-pokemon.service';
+import {mergeMap, switchMap} from 'rxjs/operators';
 
 
 @Component({
@@ -62,9 +64,25 @@ export class BattleComponent implements OnInit {
     ]}
   );
 
-  constructor(public battleService: BattleService) { }
+  constructor(
+    public battleService: BattleService,
+    private listPokemonService: ListPokemonService
+    ) { }
 
   ngOnInit(): void {
+    this.listPokemonService.getAllPokemon().subscribe(
+      data => console.log(data),
+      error => console.log(error)
+    );
+    this.listPokemonService.getAPokemon('squirtle').pipe(
+      /*mergeMap(pokemon => {
+        console.log(pokemon);
+        return this.listPokemonService.setMoveValueFromPokemon(pokemon);
+      })*/
+    ).subscribe(
+      data => console.log(data),
+      error => console.log(error)
+    );
   }
 
   public async handlePlayClick(): Promise<void> {

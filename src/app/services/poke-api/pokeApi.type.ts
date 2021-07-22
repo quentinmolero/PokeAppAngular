@@ -1,11 +1,5 @@
 export type PokemonName = {
-  name: string,
-  [id: string]: unknown
-};
-
-export type PokemonName2 = {
-  name: string,
-  url: string
+  name: string
 };
 
 export type getAllPokemonResponse = {
@@ -14,3 +8,28 @@ export type getAllPokemonResponse = {
   previous?: string,
   results: PokemonName[]
 };
+
+export type PokemonType = {
+  type: {name: string}
+};
+
+export type PokemonBaseStat = {
+  base_stat: number;
+  stat: { name: string};
+};
+
+export type PokemonMove = {
+  move: { name: string, url: string }
+};
+
+export type getAPokemonResponse = {
+  types: [PokemonType];
+  stats: [PokemonBaseStat];
+  moves: [PokemonMove];
+};
+
+export type getMoveValueDetail = {
+  power: number
+};
+
+
