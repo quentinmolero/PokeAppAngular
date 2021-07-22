@@ -8,6 +8,7 @@ import { BattleComponent } from './components/battle/battle.component';
 import { LogComponent } from './components/log/log.component';
 import { PokemonNameColorDirective } from './directives/pokemonNameColor/pokemon-name-color.directive';
 import {HttpClientModule} from '@angular/common/http';
+import { ListPokemonComponent } from './components/list-pokemon/list-pokemon.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import {HttpClientModule} from '@angular/common/http';
     PokemonComponent,
     BattleComponent,
     LogComponent,
-    PokemonNameColorDirective
+    PokemonNameColorDirective,
+    ListPokemonComponent
   ],
   imports: [
     BrowserModule,
