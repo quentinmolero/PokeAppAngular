@@ -17,7 +17,7 @@ export class BattleComponent implements OnInit {
     name: 'carapuce',
     health: 80,
     speed: 80,
-    type: 'blue',
+    type: 'water',
     attacks: [
       {
         name: 'charge',
@@ -43,7 +43,7 @@ export class BattleComponent implements OnInit {
     name: 'pikachu',
     health: 80,
     speed: 70,
-    type: 'yellow',
+    type: 'electric',
     attacks: [
       {
         name: 'charge',
