@@ -5,6 +5,7 @@ export interface IAttack {
 }
 
 export interface IPokemon {
+  id?: number;
   name: string;
   health: number;
   speed: number;
@@ -14,7 +15,7 @@ export interface IPokemon {
 }
 
 export class Pokemon implements IPokemon{
-
+  id?: number;
   name: string;
   health: number;
   speed: number;
@@ -23,6 +24,7 @@ export class Pokemon implements IPokemon{
   type: string;
 
   constructor(props: IPokemon) {
+    this.id = props.id;
     this.name = props.name;
     this.health = props.health;
     this.speed = props.speed;

@@ -74,12 +74,7 @@ export class BattleComponent implements OnInit {
       data => console.log(data),
       error => console.log(error)
     );
-    this.listPokemonService.getAPokemon('squirtle').pipe(
-      /*mergeMap(pokemon => {
-        console.log(pokemon);
-        return this.listPokemonService.setMoveValueFromPokemon(pokemon);
-      })*/
-    ).subscribe(
+    this.listPokemonService.getAPokemon('squirtle').subscribe(
       data => console.log(data),
       error => console.log(error)
     );

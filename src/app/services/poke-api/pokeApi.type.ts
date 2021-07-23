@@ -23,6 +23,7 @@ export type PokemonMove = {
 };
 
 export type getAPokemonResponse = {
+  id: number;
   types: [PokemonType];
   stats: [PokemonBaseStat];
   moves: [PokemonMove];
