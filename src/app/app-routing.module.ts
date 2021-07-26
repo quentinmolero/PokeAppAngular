@@ -5,7 +5,7 @@ import {ListPokemonComponent} from './components/list-pokemon/list-pokemon.compo
 
 const routes: Routes = [
   {path: '', component: ListPokemonComponent},
-  {path: 'battle', component: BattleComponent}
+  {path: 'battle/:firstPokemonName/:secondPokemonName', component: BattleComponent}
 ];
 
 @NgModule({
