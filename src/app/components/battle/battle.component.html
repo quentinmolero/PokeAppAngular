@@ -1,6 +1,6 @@
 <div id="battle-pokemon-area">
-  <app-pokemon position="left" [pokemon]="carapuce"></app-pokemon>
-  <app-pokemon position="right" [pokemon]="pikachu"></app-pokemon>
+  <app-pokemon position="left" [pokemon]="this.firstPokemon"></app-pokemon>
+  <app-pokemon position="right" [pokemon]="this.secondPokemon"></app-pokemon>
 </div>
 <button [disabled]="battleService.pokemonWinner !== undefined" (click)="handlePlayClick()" >{{buttonText}}</button>
 <app-log [pokemonWinner]="battleService.pokemonWinner" [logsFight]="battleService.logsFight"></app-log>
