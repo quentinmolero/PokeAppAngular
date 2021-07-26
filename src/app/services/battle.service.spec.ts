@@ -13,7 +13,6 @@ describe('BattleService', () => {
     jest.setTimeout(30_000);
     TestBed.configureTestingModule({});
     service = TestBed.inject(BattleService);
-    service.buttonText = 'Play Fight';
     papilusion = new Pokemon({
       name: 'papilusion',
       health: 90,
@@ -73,23 +72,15 @@ describe('BattleService', () => {
 
 
   describe('test handleModificationButtonText method', () => {
-    it('Should return pikachu beacause papulsion is not stronger enough', async () => {
+    it('Should return pikachu because papulsion is not stronger enough', async () => {
       await service.handleModificationButtonText(pikachu, papilusion);
       expect(service.pokemonWinner).toBe(pikachu);
-      expect(service.buttonText).toBe('Stop Fight');
-    });
-
-    it('Should return pikachu beacause papilusion is not stronger enough', async () => {
-      await service.handleModificationButtonText(pikachu, papilusion);
-      expect(service.pokemonWinner).toBe(pikachu);
-      expect(service.buttonText).toBe('Stop Fight');
     });
 
     it('Should return papilusion when pikachu have 0 life', async () => {
       pikachu.health = 0;
       await service.handleModificationButtonText(pikachu, papilusion);
       expect(service.pokemonWinner).toBe(papilusion);
-      expect(service.buttonText).toBe('Stop Fight');
     });
 
     it('Should return error when papilusion and pikachu have both 0 life',   async () => {
@@ -102,16 +93,6 @@ describe('BattleService', () => {
       }catch (e) {
         expect(e).toEqual({name: 'PokemonsNoLifeException', message: 'Pokemon can\'t figth because they are dead'});
       }
-    });
-
-    it('pokemonWinner should be unchanged because button text is at Stop Fight',   async () => {
-      service.pokemonWinner = papilusion;
-      service.buttonText = 'Stop Fight';
-
-      await service.handleModificationButtonText(pikachu, papilusion);
-
-      expect(service.pokemonWinner).toBe(papilusion);
-      expect(service.buttonText).toBe('Play Fight');
     });
   });
 });
