@@ -88,16 +88,4 @@ describe('ListPokemonService', () => {
 
     http.expectOne('https://pokeapi.co/api/v2/move/5/').flush(mockedAttack);
   });
-
-  it('should test when the url is empty', () => {
-    const http = TestBed.inject(HttpTestingController);
-    const mockedAttack = {power: 80};
-    service.getMoveValue('').subscribe(
-      (valueAttack: number) => {
-      },
-      error => {
-        expect(error).toBe(error);
-      }
-    );
-  });
 });
