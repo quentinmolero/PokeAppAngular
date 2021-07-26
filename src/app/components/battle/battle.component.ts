@@ -70,10 +70,10 @@ export class BattleComponent implements OnInit {
     ) { }
 
   ngOnInit(): void {
-    /*this.listPokemonService.getAllPokemon().subscribe(
+    this.listPokemonService.getAllPokemon().subscribe(
       data => console.log(data),
       error => console.log(error)
-    );*/
+    );
     /*this.listPokemonService.getAPokemon('squirtle').subscribe(
       data => console.log(data),
       error => console.log(error)

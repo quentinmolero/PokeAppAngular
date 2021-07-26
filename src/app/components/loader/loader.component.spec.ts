@@ -34,8 +34,8 @@ describe('LoaderComponent', () => {
   it('should be empty when show == false', fakeAsync(() => {
     const loaderService = TestBed.inject(LoaderService);
     spyOn(loaderService, 'loaderState').and.returnValue(of({show: false}));
-    component.ngOnInit();
     fixture.detectChanges();
+    tick();
     expect(view.querySelector('.loader-container').content).toBe(undefined);
     expect(view.querySelector('mat-progress-spinner').hidden).toBe(true);
     //expect(loaderService.loaderState).toHaveBeenCalled();
@@ -45,8 +45,8 @@ describe('LoaderComponent', () => {
     const loaderService = TestBed.inject(LoaderService);
     const functionSpy = spyOn(loaderService, 'loaderState').and.returnValue(of({show: true}));
     fixture.detectChanges();
-    tick(1);
-    expect(view.querySelector('.loader-container').content).toBe(undefined);
+    tick();
+    expect(view.querySelector('.loader-container').content).not.toBe(undefined);
     expect(view.querySelector('mat-progress-spinner').hidden).toBe(false);
     //expect(loaderService.loaderState).toHaveBeenCalled();
   }));
