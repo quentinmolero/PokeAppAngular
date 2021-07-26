@@ -1,14 +1,21 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, fakeAsync, TestBed, tick} from '@angular/core/testing';
 
 import { LoaderComponent } from './loader.component';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {LoaderService} from '../../services/loader.service';
+import {inject} from '@angular/core';
+import {of} from 'rxjs';
 
 describe('LoaderComponent', () => {
   let component: LoaderComponent;
   let fixture: ComponentFixture<LoaderComponent>;
+  let view: any;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ LoaderComponent ]
+      declarations: [ LoaderComponent ],
+      imports: [MatProgressSpinnerModule],
+      providers: [LoaderService]
     })
     .compileComponents();
   });
@@ -16,10 +23,31 @@ describe('LoaderComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(LoaderComponent);
     component = fixture.componentInstance;
+    view = fixture.debugElement.nativeElement;
     fixture.detectChanges();
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should be empty when show == false', fakeAsync(() => {
+    const loaderService = TestBed.inject(LoaderService);
+    spyOn(loaderService, 'loaderState').and.returnValue(of({show: false}));
+    component.ngOnInit();
+    fixture.detectChanges();
+    expect(view.querySelector('.loader-container').content).toBe(undefined);
+    expect(view.querySelector('mat-progress-spinner').hidden).toBe(true);
+    //expect(loaderService.loaderState).toHaveBeenCalled();
+  }));
+
+  it('should display spinBar when show == true', fakeAsync(() => {
+    const loaderService = TestBed.inject(LoaderService);
+    const functionSpy = spyOn(loaderService, 'loaderState').and.returnValue(of({show: true}));
+    fixture.detectChanges();
+    tick(1);
+    expect(view.querySelector('.loader-container').content).toBe(undefined);
+    expect(view.querySelector('mat-progress-spinner').hidden).toBe(false);
+    //expect(loaderService.loaderState).toHaveBeenCalled();
+  }));
 });
