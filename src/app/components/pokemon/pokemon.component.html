@@ -1,5 +1,6 @@
 <div [ngClass]="{'PokemonLeft': position === 'left', 'PokemonRight': position === 'right'}">
-  <img src="https://www.smogon.com/dex/media/sprites/xy/squirtle.gif" alt="Pikachu"/>
+  <img *ngIf="position === 'left'" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/{{pokemon?.id}}.png" alt="{{pokemon?.name}}"/>
+  <img *ngIf="position === 'right'" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{pokemon?.id}}.png" alt="{{pokemon?.name}}"/>
 </div>
 <div [ngClass]="{'PokemonInfosLeft': position === 'left', 'PokemonInfosRight': position === 'right'}">
   <p class="PokemonName">{{pokemon?.name}}</p>

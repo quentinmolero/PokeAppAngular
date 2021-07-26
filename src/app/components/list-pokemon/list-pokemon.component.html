@@ -1,1 +1,12 @@
-<p>list-pokemon works!</p>
+<div class="pokemonListComponent grid-container">
+  <div *ngFor="let pokemon of pokemons">
+    <div class="pokemonCard">
+      <div class="img">
+        <img src="https://www.smogon.com/dex/media/sprites/xy/{{pokemon?.name}}.gif" alt="{{pokemon?.name}}">
+      </div>
+      <p class="listPokemonName">{{pokemon?.name}}</p>
+      <span id="button-validation">
+    </span>
+    </div>
+  </div>
+</div>

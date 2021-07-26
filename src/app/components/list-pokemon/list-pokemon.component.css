@@ -1,0 +1,33 @@
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+@media(max-width: 1600px){
+  .grid-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media(max-width: 600px){
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+.pokemonCard{
+  transition-duration: 0.5s;
+  text-align: center;
+  border: 0.25em solid red;
+}
+
+.active{
+  border: 0.5em solid green;
+}
+
+.pokemonCard .img{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 160px;
+}
