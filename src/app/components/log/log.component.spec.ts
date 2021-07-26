@@ -1,10 +1,9 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { LogComponent } from './log.component';
+import {LogComponent} from './log.component';
 import {Pokemon} from '../../models/pokemon';
 import {LogsFight} from '../../models/logs';
 import {PokemonNameColorDirective} from '../../directives/pokemonNameColor/pokemon-name-color.directive';
-import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 describe('LogComponent', () => {
   let component: LogComponent;

@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { BattleComponent } from './battle.component';
+import {BattleComponent} from './battle.component';
 import {CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 import {PokemonComponent} from '../pokemon/pokemon.component';
 

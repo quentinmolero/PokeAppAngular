@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {Pokemon} from '../models/pokemon';
 import {LogsFight} from '../models/logs';
 

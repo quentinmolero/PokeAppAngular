@@ -1,8 +1,7 @@
-import { TestBed } from '@angular/core/testing';
+import {TestBed} from '@angular/core/testing';
 
-import { BattleService } from './battle.service';
-import {IPokemon, Pokemon} from '../models/pokemon';
-import MockInstance = jest.MockInstance;
+import {BattleService} from './battle.service';
+import {Pokemon} from '../models/pokemon';
 
 describe('BattleService', () => {
   let service: BattleService;

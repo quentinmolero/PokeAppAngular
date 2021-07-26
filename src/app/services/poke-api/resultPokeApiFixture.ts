@@ -1,4 +1,4 @@
-import {IPokemon, Pokemon} from '../../models/pokemon';
+import {IPokemon} from '../../models/pokemon';
 
 export const PokemonResponse = {
   id: 7,

@@ -1,7 +1,6 @@
-import { TestBed } from '@angular/core/testing';
+import {TestBed} from '@angular/core/testing';
 
-import { ListPokemonService } from './list-pokemon.service';
-import {HttpClient, HttpClientModule} from '@angular/common/http';
+import {ListPokemonService} from './list-pokemon.service';
 import {HttpClientTestingModule, HttpTestingController} from '@angular/common/http/testing';
 import {PokemonName} from './pokeApi.type';
 import {Pokemon} from '../../models/pokemon';
