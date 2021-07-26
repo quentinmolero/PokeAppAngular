@@ -1,6 +1,7 @@
 <div class="pokemonListComponent grid-container">
   <div *ngFor="let pokemon of pokemons">
-    <div class="pokemonCard">
+    <div class="pokemonCard" (click)="selectPokemon(pokemon.name)"
+         [ngClass]="{'active-selected-pokemon': selectedPokemon && selectedPokemon == pokemon.name}">
       <div class="img">
         <img src="https://www.smogon.com/dex/media/sprites/xy/{{pokemon?.name}}.gif" alt="{{pokemon?.name}}">
       </div>

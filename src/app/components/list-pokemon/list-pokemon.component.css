@@ -21,8 +21,8 @@
   border: 0.25em solid red;
 }
 
-.active{
-  border: 0.5em solid green;
+.active-selected-pokemon{
+  background-color: #ffff5b;
 }
 
 .pokemonCard .img{

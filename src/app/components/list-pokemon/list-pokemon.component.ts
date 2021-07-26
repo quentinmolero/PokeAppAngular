@@ -9,6 +9,7 @@ import {PokemonName} from '../../services/poke-api/pokeApi.type';
 })
 export class ListPokemonComponent implements OnInit {
   pokemons: PokemonName[] = [];
+  selectedPokemon = '';
 
   constructor(
     private listPokemonService: ListPokemonService
@@ -20,5 +21,10 @@ export class ListPokemonComponent implements OnInit {
       (data: PokemonName[]) => this.pokemons = data,
       err => console.log(err)
     );
+  }
+
+  public selectPokemon(pokemonName: string): void
+  {
+    this.selectedPokemon = pokemonName;
   }
 }
