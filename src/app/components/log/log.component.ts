@@ -1,6 +1,7 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnDestroy, OnInit} from '@angular/core';
 import {LogsFight} from '../../models/logs';
 import {Pokemon} from '../../models/pokemon';
+import {BattleService} from '../../services/battle.service';
 
 @Component({
   selector: 'app-log',

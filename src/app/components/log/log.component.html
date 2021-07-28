@@ -7,7 +7,7 @@
       used {{logFight.attack.name}} against
       <p class="logPokemonName" [appPokemonNameColor]="logFight.pokemonTarget.type">{{logFight.pokemonTarget.name}}</p>
       and did
-      <p class="logAttackDamage">{{logFight.attack.value | number:'3.0'}} damages</p>
+      <p class="logAttackDamage">{{logFight.attack.value ? (logFight.attack.value | number:'3.0') : '0'}} damages</p>
     </div>
   </div>
 </div>

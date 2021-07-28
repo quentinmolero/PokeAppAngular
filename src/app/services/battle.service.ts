@@ -8,6 +8,7 @@ import {LogsFight} from '../models/logs';
 export class BattleService {
   logsFight: LogsFight[] = [];
   pokemonWinner: Pokemon | undefined;
+  fightContinue: boolean | undefined;
 
   constructor() { }
 
@@ -16,7 +17,7 @@ export class BattleService {
     if (pokemon1.health <= 0 && pokemon2.health <= 0) {
       throw {name : 'PokemonsNoLifeException', message : 'Pokemon can\'t figth because they are dead'};
     }
-    while (pokemon1.health > 0 && pokemon2.health > 0) {
+    while (pokemon1.health > 0 && pokemon2.health > 0 && this.fightContinue) {
       const pokemonWhoPlayInFirst = this.determineWhoAttackInFirst(pokemon1, pokemon2);
       if (pokemon1 === pokemonWhoPlayInFirst) {
         this.doAnAttack(pokemonWhoPlayInFirst, pokemon2);
@@ -46,7 +47,7 @@ export class BattleService {
       setTimeout(resolve, delay);
     });
   }
-  public async handleModificationButtonText(pokemon1: Pokemon, pokemon2: Pokemon): Promise<void> {
+  public async startFight(pokemon1: Pokemon, pokemon2: Pokemon): Promise<void> {
     const result = await this.startAFight(pokemon1, pokemon2);
 
     this.pokemonWinner = result ? result : undefined;
@@ -66,5 +67,14 @@ export class BattleService {
       attack,
       date: new Date()
     }));
+  }
+
+  clearLogsFight(): void {
+    this.pokemonWinner = undefined;
+    this.logsFight = [];
+  }
+
+  changeFightStatus(): void {
+    this.fightContinue = !this.fightContinue;
   }
 }
