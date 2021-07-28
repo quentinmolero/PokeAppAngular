@@ -15,30 +15,44 @@ describe('LoaderComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [ LoaderComponent ],
       imports: [MatProgressSpinnerModule],
-      providers: [LoaderService]
+      providers: [{
+        provide: LoaderService,
+        useValue: {
+          loaderState: of({show: true}) // création à la volée d'un observable qui renvoie le state.
+        }
+      }]
     })
     .compileComponents();
-  });
-
-  beforeEach(() => {
     fixture = TestBed.createComponent(LoaderComponent);
     component = fixture.componentInstance;
     view = fixture.debugElement.nativeElement;
     fixture.detectChanges();
   });
 
+
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  it('test angular professor code', fakeAsync(() => {
+    fixture.detectChanges();
+    tick();
+    expect(view.querySelector('.loader-container').content).toBe(undefined);
+  }));
 
-  it('should be empty when show == false', fakeAsync(() => {
+  it('test angular professor code2', fakeAsync(() => {
+    fixture.detectChanges();
+    tick();
+    expect(view.querySelector('.loader-container').content).not.toBe(undefined);
+  }));
+
+  /*it('should be empty when show == false', fakeAsync(() => {
     const loaderService = TestBed.inject(LoaderService);
     spyOn(loaderService, 'loaderState').and.returnValue(of({show: false}));
     fixture.detectChanges();
     tick();
     expect(view.querySelector('.loader-container').content).toBe(undefined);
     expect(view.querySelector('mat-progress-spinner').hidden).toBe(true);
-    //expect(loaderService.loaderState).toHaveBeenCalled();
+    expect(loaderService.loaderState).toHaveBeenCalled();
   }));
 
   it('should display spinBar when show == true', fakeAsync(() => {
@@ -48,6 +62,6 @@ describe('LoaderComponent', () => {
     tick();
     expect(view.querySelector('.loader-container').content).not.toBe(undefined);
     expect(view.querySelector('mat-progress-spinner').hidden).toBe(false);
-    //expect(loaderService.loaderState).toHaveBeenCalled();
-  }));
+    expect(loaderService.loaderState).toHaveBeenCalled();
+  }));*/
 });
