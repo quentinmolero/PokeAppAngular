@@ -14,6 +14,12 @@ import { LoaderComponent } from './components/loader/loader.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule} from '@angular/material/button';
 import {SelectPokemonComponent} from './components/select-pokemon/select-pokemon.component';
+import { HeaderComponent } from './components/header/header.component';
+import { CustomComponent } from './components/custom/custom.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import {MatIconModule} from '@angular/material/icon';
+import {ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,16 +30,22 @@ import {SelectPokemonComponent} from './components/select-pokemon/select-pokemon
     PokemonNameColorDirective,
     ListPokemonComponent,
     LoaderComponent,
-    SelectPokemonComponent
+    SelectPokemonComponent,
+    HeaderComponent,
+    CustomComponent,
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        BrowserAnimationsModule,
-        HttpClientModule,
-        MatProgressSpinnerModule,
-        MatButtonModule
-    ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    HttpClientModule,
+    MatProgressSpinnerModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatIconModule,
+    ReactiveFormsModule
+  ],
   providers: [{
     provide: HTTP_INTERCEPTORS,
     useClass: LoaderInterceptorsService,

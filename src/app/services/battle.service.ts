@@ -9,6 +9,7 @@ export class BattleService {
   logsFight: LogsFight[] = [];
   pokemonWinner: Pokemon | undefined;
   fightContinue: boolean | undefined;
+  pokemonsCustom: Pokemon[] = [];
 
   constructor() { }
 
@@ -67,6 +68,10 @@ export class BattleService {
       attack,
       date: new Date()
     }));
+  }
+
+  clearPokemonsCustom(): void {
+    this.pokemonsCustom = [];
   }
 
   clearLogsFight(): void {
