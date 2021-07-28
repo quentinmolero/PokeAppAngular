@@ -1,11 +1,13 @@
 .grid-container {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 5px;
+  padding: 5px;
 }
 
-@media(max-width: 1600px){
+@media(max-width: 1200px){
   .grid-container {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -18,7 +20,8 @@
 .pokemonCard{
   transition-duration: 0.5s;
   text-align: center;
-  border: 0.25em solid red;
+  border: 0.2em solid red;
+  border-radius: 10px;
 }
 
 .active-selected-pokemon{

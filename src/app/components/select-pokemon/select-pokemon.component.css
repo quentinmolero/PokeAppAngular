@@ -1,6 +1,6 @@
 #selectPokemon{
   text-align: center;
-  height: 95%;
+  height: 100vh;
 }
 
 #subtitle{
@@ -17,13 +17,18 @@ h2{
   display: inline-block;
   box-sizing: border-box;
   width: 50%;
-  height: 85%;
+  height: 70vh;
   overflow: auto;
-  border: 0.25em solid black;
+  border: 0.1em solid black;
   cursor: pointer;
 }
 
 .button_subscribe_active {
   background: #F73C3B;
   color: white;
+}
+
+
+.error {
+  color: red;
 }
