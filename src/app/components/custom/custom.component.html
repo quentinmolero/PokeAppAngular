@@ -1,0 +1,62 @@
+<h1 xmlns="http://www.w3.org/1999/html">Create your 2 pokemons</h1>
+<form [formGroup]="createPokemons" (ngSubmit)="registerPokemons()">
+  <div class="form-input">
+    <div class="form-pokemon-create">
+      <mat-form-field class="example-form-field">
+        <mat-label>Name</mat-label>
+        <input matInput type="text" name="name1" id="name1" formControlName="name1" required>
+        <mat-icon class="input_icon" matSuffix>person_outline</mat-icon>
+      </mat-form-field>
+      <mat-form-field class="example-form-field">
+        <mat-label>Health</mat-label>
+        <input matInput type="number" name="health1" id="health1" formControlName="health1" required>
+        <mat-icon class="input_icon" matSuffix>person_outline</mat-icon>
+      </mat-form-field>
+      <mat-form-field class="example-form-field">
+        <mat-label>Speed</mat-label>
+        <input matInput type="number" name="speed1" id="speed1" formControlName="speed1" required>
+        <mat-icon class="input_icon" matSuffix>person_outline</mat-icon>
+      </mat-form-field>
+      <mat-form-field class="example-form-field">
+        <mat-label>attack name</mat-label>
+        <input matInput type="text" name="attack_name1" id="attack-name1" formControlName="attack_name1" required>
+        <mat-icon class="input_icon" matSuffix>person_outline</mat-icon>
+      </mat-form-field>
+      <mat-form-field class="example-form-field">
+        <mat-label>attack value</mat-label>
+        <input matInput type="number" name="attack_value1" id="attack-value1" formControlName="attack_value1" required>
+        <mat-icon class="input_icon" matSuffix>person_outline</mat-icon>
+      </mat-form-field>
+    </div>
+    <div class="form-pokemon-create">
+      <mat-form-field class="example-form-field">
+        <mat-label>Name</mat-label>
+        <input matInput type="text" name="name2" id="name2" formControlName="name2" required>
+        <mat-icon class="input_icon" matSuffix>person_outline</mat-icon>
+      </mat-form-field>
+      <mat-form-field class="example-form-field">
+        <mat-label>Health</mat-label>
+        <input matInput type="number" name="health2" id="health2" formControlName="health2" required>
+        <mat-icon class="input_icon" matSuffix>person_outline</mat-icon>
+      </mat-form-field>
+      <mat-form-field class="example-form-field">
+        <mat-label>Speed</mat-label>
+        <input matInput type="number" name="speed2" id="speed2" formControlName="speed2" required>
+        <mat-icon class="input_icon" matSuffix>person_outline</mat-icon>
+      </mat-form-field>
+      <mat-form-field class="example-form-field">
+        <mat-label>attack name</mat-label>
+        <input matInput type="text" name="attack-name2" id="attack_name2" formControlName="attack_name2" required>
+        <mat-icon class="input_icon" matSuffix>person_outline</mat-icon>
+      </mat-form-field>
+      <mat-form-field class="example-form-field">
+        <mat-label>attack value</mat-label>
+        <input matInput type="number" name="attack-value2" id="attack_value2" formControlName="attack_value2" required>
+        <mat-icon class="input_icon" matSuffix>person_outline</mat-icon>
+      </mat-form-field>
+    </div>
+  </div>
+  <span id="button-validation">
+    <button id="button_subscribe" [ngClass]="{'button_subscribe_active': !createPokemons.invalid}" mat-raised-button [disabled]="createPokemons.invalid">Valider</button>
+  </span>
+</form>

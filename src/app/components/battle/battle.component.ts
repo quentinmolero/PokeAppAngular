@@ -33,12 +33,22 @@ export class BattleComponent implements OnInit, OnDestroy {
     this.subscriptionRouteForSecondPokemon = this.route.params.subscribe((params: Params): void => {
       this.secondPokemonName = params.secondPokemonName;
     });
-    if (this.firstPokemonName !== undefined) {
+
+    if (this.battleService.pokemonsCustom[0]) {
+      this.firstPokemon = this.battleService.pokemonsCustom[0];
+      console.log(this.firstPokemon);
+    }
+    else if (this.firstPokemonName !== undefined) {
       this.listPokemonService.getAPokemon(this.firstPokemonName).subscribe(
         pokemon => this.firstPokemon = pokemon
       );
     }
-    if (this.secondPokemonName !== undefined) {
+
+    if (this.battleService.pokemonsCustom[1]) {
+      this.secondPokemon = this.battleService.pokemonsCustom[1];
+      console.log(this.firstPokemon);
+    }
+    else if (this.secondPokemonName !== undefined) {
       this.listPokemonService.getAPokemon(this.secondPokemonName).subscribe(
         pokemon => this.secondPokemon = pokemon
       );
@@ -61,7 +71,10 @@ export class BattleComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.subscriptionRoute?.unsubscribe();
     this.subscriptionRouteForSecondPokemon?.unsubscribe();
-    this.battleService.changeFightStatus();
+    if(this.battleService.fightContinue === true)
+      this.battleService.changeFightStatus();
     this.battleService.clearLogsFight();
+    if (this.battleService.pokemonsCustom.length > 0)
+      this.battleService.clearPokemonsCustom();
   }
 }
