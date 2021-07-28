@@ -135,4 +135,13 @@ describe('BattleService', () => {
       expect(service.fightContinue).toBe(true);
     });
   });
+
+  describe('test to clear pokemonCustom', () => {
+    it('test to clear pokemonCustom when it\'s filed', () => {
+      service.pokemonsCustom.push(pikachu);
+      service.pokemonsCustom.push(papilusion);
+      service.clearPokemonsCustom();
+      expect(service.pokemonsCustom).toEqual([]);
+    });
+  });
 });

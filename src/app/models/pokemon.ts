@@ -40,7 +40,6 @@ export class Pokemon implements IPokemon{
   }
 
   determineTheAttack(randomAttack = Math.random): IAttack {
-    console.log(this.attacks.length);
     return this.attacks[Math.round(randomAttack() * (this.attacks.length - 1))];
   }
 
