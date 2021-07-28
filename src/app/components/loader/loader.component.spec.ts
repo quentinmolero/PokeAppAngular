@@ -33,7 +33,7 @@ describe('LoaderComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-  it('test angular professor code', fakeAsync(() => {
+  /*it('test angular professor code', fakeAsync(() => {
     fixture.detectChanges();
     tick();
     expect(view.querySelector('.loader-container').content).toBe(undefined);
@@ -45,7 +45,7 @@ describe('LoaderComponent', () => {
     expect(view.querySelector('.loader-container').content).not.toBe(undefined);
   }));
 
-  /*it('should be empty when show == false', fakeAsync(() => {
+  it('should be empty when show == false', fakeAsync(() => {
     const loaderService = TestBed.inject(LoaderService);
     spyOn(loaderService, 'loaderState').and.returnValue(of({show: false}));
     fixture.detectChanges();
