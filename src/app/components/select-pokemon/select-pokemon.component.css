@@ -1,0 +1,29 @@
+#selectPokemon{
+  text-align: center;
+  height: 95%;
+}
+
+#subtitle{
+  font-size: 9px;
+  margin: 0;
+}
+
+h2{
+  display: inline-block;
+  width: 50%;
+}
+
+.pokemonList{
+  display: inline-block;
+  box-sizing: border-box;
+  width: 50%;
+  height: 85%;
+  overflow: auto;
+  border: 0.25em solid black;
+  cursor: pointer;
+}
+
+.button_subscribe_active {
+  background: #F73C3B;
+  color: white;
+}

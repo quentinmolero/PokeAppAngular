@@ -12,6 +12,8 @@ import {ListPokemonComponent} from './components/list-pokemon/list-pokemon.compo
 import {LoaderInterceptorsService} from './services/interceptors/loader-interceptors.service';
 import {LoaderComponent} from './components/loader/loader.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatButtonModule} from '@angular/material/button';
+import {SelectPokemonComponent} from './components/select-pokemon/select-pokemon.component';
 
 @NgModule({
   declarations: [
@@ -21,15 +23,17 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     LogComponent,
     PokemonNameColorDirective,
     ListPokemonComponent,
-    LoaderComponent
+    LoaderComponent,
+    SelectPokemonComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    HttpClientModule,
-    MatProgressSpinnerModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        HttpClientModule,
+        MatProgressSpinnerModule,
+        MatButtonModule
+    ],
   providers: [{
     provide: HTTP_INTERCEPTORS,
     useClass: LoaderInterceptorsService,
