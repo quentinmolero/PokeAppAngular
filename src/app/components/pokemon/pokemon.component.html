@@ -1,6 +1,6 @@
 <div [ngClass]="{'PokemonLeft': position === 'left', 'PokemonRight': position === 'right'}">
-  <img class="img-pokeball" *ngIf="position === 'left'" src="{{pokemon?.id ? 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/'+pokemon?.id + '.png' : 'assets/pokeball.png'}}" alt="{{pokemon?.name}}"/>
-  <img class="img-pokeball"  *ngIf="position === 'right'" src="{{pokemon?.id ? 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/'+pokemon?.id + '.png' : 'assets/pokeball.png'}}" alt="{{pokemon?.name}}"/>
+  <img [ngClass]="{'img-pokeball': !pokemon?.id}" *ngIf="position === 'left'" src="{{pokemon?.id ? 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/'+pokemon?.id + '.png' : 'assets/pokeball.png'}}" alt="{{pokemon?.name}}"/>
+  <img [ngClass]="{'img-pokeball': !pokemon?.id}"  *ngIf="position === 'right'" src="{{pokemon?.id ? 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/'+pokemon?.id + '.png' : 'assets/pokeball.png'}}" alt="{{pokemon?.name}}"/>
 </div>
 <div [ngClass]="{'PokemonInfosLeft': position === 'left', 'PokemonInfosRight': position === 'right'}">
   <p class="PokemonName">{{pokemon?.name}}</p>
