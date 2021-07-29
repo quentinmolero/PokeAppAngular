@@ -1,4 +1,4 @@
-import { PokemonNameColorDirective } from './pokemon-name-color.directive';
+import {PokemonNameColorDirective} from './pokemon-name-color.directive';
 import {Component, Renderer2, Type} from '@angular/core';
 import {ComponentFixture, TestBed} from '@angular/core/testing';
 

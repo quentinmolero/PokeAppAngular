@@ -1,4 +1,4 @@
-import {IAttack, IPokemon, Pokemon} from './pokemon';
+import {IAttack, Pokemon} from './pokemon';
 
 export interface ILogsFight {
   pokemonAttack: Pokemon;

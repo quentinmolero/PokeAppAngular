@@ -2,7 +2,6 @@ import { TestBed } from '@angular/core/testing';
 
 import { BattleService } from './battle.service';
 import {IPokemon, Pokemon} from '../models/pokemon';
-import MockInstance = jest.MockInstance;
 import {LogsFight} from '../models/logs';
 
 describe('BattleService', () => {

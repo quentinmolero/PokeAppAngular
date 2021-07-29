@@ -1,9 +1,8 @@
 import {ComponentFixture, fakeAsync, TestBed, tick} from '@angular/core/testing';
 
-import { LoaderComponent } from './loader.component';
+import {LoaderComponent} from './loader.component';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {LoaderService} from '../../services/loader.service';
-import {inject} from '@angular/core';
 import {of} from 'rxjs';
 
 describe('LoaderComponent', () => {

@@ -1,9 +1,9 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {forkJoin, Observable} from 'rxjs';
 import {IAttack, Pokemon} from '../../models/pokemon';
 import {getAllPokemonResponse, getAPokemonResponse, getMoveValueDetail, PokemonMove, PokemonName} from './pokeApi.type';
-import {map, mergeMap, tap} from 'rxjs/operators';
+import {map, mergeMap} from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
