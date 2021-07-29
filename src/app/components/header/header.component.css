@@ -1,0 +1,32 @@
+#header_content {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 10%;
+  width: 100%;
+  margin: auto;
+}
+
+#header_content a {
+  cursor: pointer;
+  text-decoration: none;
+  color: black;
+}
+
+#nav-bar-link-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 20%;
+  font-family: "Chewy", Arial,Helvetica, sans-serif;
+  color: #47525E;
+  margin-right:15%;
+}
+
+@media screen and (max-width: 400px) {
+
+  #header_content {
+    width: 100%;
+  }
+}

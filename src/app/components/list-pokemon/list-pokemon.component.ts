@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, Output, EventEmitter} from '@angular/core';
 import {ListPokemonService} from '../../services/poke-api/list-pokemon.service';
 import {PokemonName} from '../../services/poke-api/pokeApi.type';
 
@@ -10,6 +10,7 @@ import {PokemonName} from '../../services/poke-api/pokeApi.type';
 export class ListPokemonComponent implements OnInit {
   pokemons: PokemonName[] = [];
   selectedPokemon = '';
+  @Output() pokemonChoose: EventEmitter<string> = new EventEmitter<string>();
 
   constructor(
     private listPokemonService: ListPokemonService
@@ -26,5 +27,6 @@ export class ListPokemonComponent implements OnInit {
   public selectPokemon(pokemonName: string): void
   {
     this.selectedPokemon = pokemonName;
+    this.pokemonChoose.emit(this.selectedPokemon);
   }
 }

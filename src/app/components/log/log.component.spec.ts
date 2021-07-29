@@ -1,5 +1,4 @@
 import {ComponentFixture, TestBed} from '@angular/core/testing';
-
 import {LogComponent} from './log.component';
 import {Pokemon} from '../../models/pokemon';
 import {LogsFight} from '../../models/logs';
