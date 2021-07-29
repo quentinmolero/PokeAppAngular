@@ -2,5 +2,7 @@
   <app-pokemon position="left" [pokemon]="this.firstPokemon"></app-pokemon>
   <app-pokemon position="right" [pokemon]="this.secondPokemon"></app-pokemon>
 </div>
-<button [disabled]="battleService.pokemonWinner !== undefined" (click)="handlePlayClick()" >{{buttonText}}</button>
+<div id="button-validation">
+  <button id="button_subscribe" [ngClass]="{'button_subscribe_active': battleService.pokemonWinner === undefined}"  mat-raised-button [disabled]="battleService.pokemonWinner !== undefined" (click)="handlePlayClick()" >{{buttonText}}</button>
+</div>
 <app-log [pokemonWinner]="battleService.pokemonWinner" [logsFight]="battleService.logsFight"></app-log>

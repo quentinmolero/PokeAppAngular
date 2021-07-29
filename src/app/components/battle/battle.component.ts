@@ -53,6 +53,7 @@ export class BattleComponent implements OnInit, OnDestroy {
         pokemon => this.secondPokemon = pokemon
       );
     }
+    this.battleService.clearLogsFight();
   }
 
   public async handlePlayClick(): Promise<void> {

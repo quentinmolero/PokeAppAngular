@@ -1,6 +1,6 @@
 <div [ngClass]="{'PokemonLeft': position === 'left', 'PokemonRight': position === 'right'}">
-  <img *ngIf="position === 'left'" src="{{pokemon?.id ? 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/'+pokemon?.id + '.png' : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7qMC5-J1S3na1UbomAIP_eJYW7W0fdIjZGw&usqp=CAU'}}" alt="{{pokemon?.name}}"/>
-  <img *ngIf="position === 'right'" src="{{pokemon?.id ? 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/'+pokemon?.id + '.png' : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7qMC5-J1S3na1UbomAIP_eJYW7W0fdIjZGw&usqp=CAU'}}" alt="{{pokemon?.name}}"/>
+  <img class="img-pokeball" *ngIf="position === 'left'" src="{{pokemon?.id ? 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/'+pokemon?.id + '.png' : 'assets/pokeball.png'}}" alt="{{pokemon?.name}}"/>
+  <img class="img-pokeball"  *ngIf="position === 'right'" src="{{pokemon?.id ? 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/'+pokemon?.id + '.png' : 'assets/pokeball.png'}}" alt="{{pokemon?.name}}"/>
 </div>
 <div [ngClass]="{'PokemonInfosLeft': position === 'left', 'PokemonInfosRight': position === 'right'}">
   <p class="PokemonName">{{pokemon?.name}}</p>

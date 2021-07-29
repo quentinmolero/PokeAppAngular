@@ -52,3 +52,7 @@
 .PokemonHealthLeftBarCritical {
   background-color: red;
 }
+
+.img-pokeball {
+  max-width: 60px;
+}
