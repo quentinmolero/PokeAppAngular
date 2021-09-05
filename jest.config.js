@@ -1,8 +1,7 @@
-const {defaults} = require('jest-config');
+require('jest-preset-angular/ngcc-jest-processor');
 
-
+/** @type {import('@jest/types').Config.InitialOptions} */
 module.exports = {
-  verbose: true,
-  collectCoverage: true,
-  collectCoverageFrom: ["src/**/*.ts"]
-}
+  preset: 'jest-preset-angular',
+  setupFilesAfterEnv: ['<rootDir>/setup-jest.ts'],
+};

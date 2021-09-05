@@ -9,28 +9,32 @@ describe('LoaderComponent', () => {
   let component: LoaderComponent;
   let fixture: ComponentFixture<LoaderComponent>;
   let view: any;
+  const fakeLoaderState = {
+    loaderState: of({show: true})
+  };
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
+  beforeEach(fakeAsync(() => {
+    TestBed.configureTestingModule({
       declarations: [ LoaderComponent ],
       imports: [MatProgressSpinnerModule],
-      providers: [{
-        provide: LoaderService,
-        useValue: {
-          loaderState: of({show: true}) // création à la volée d'un observable qui renvoie le state.
-        }
-      }]
+      providers: [
+        [{provide: LoaderService, useValue: fakeLoaderState}]
+    ]
     })
     .compileComponents();
     fixture = TestBed.createComponent(LoaderComponent);
     component = fixture.componentInstance;
     view = fixture.debugElement.nativeElement;
     fixture.detectChanges();
-  });
+  }));
 
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should call loaderState in Oninit', () => {
+    expect(component.show).toEqual(true);
   });
   /*it('test angular professor code', fakeAsync(() => {
     fixture.detectChanges();

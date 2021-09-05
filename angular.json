@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "PokeAppAngular": {
+    "example-app-v11": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:application": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/PokeAppAngular",
+            "outputPath": "dist/example-app-v11",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -66,50 +66,25 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "PokeAppAngular:build"
+            "browserTarget": "example-app-v11:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "PokeAppAngular:build:production"
+              "browserTarget": "example-app-v11:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "PokeAppAngular:build"
-          }
-        },
-        "test": {
-          "builder": "@angular-builders/jest:run"
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "tsconfig.app.json",
-              "tsconfig.spec.json",
-              "e2e/tsconfig.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
-          }
-        },
-        "e2e": {
-          "builder": "@angular-devkit/build-angular:protractor",
-          "options": {
-            "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "PokeAppAngular:serve"
-          },
-          "configurations": {
-            "production": {
-              "devServerTarget": "PokeAppAngular:serve:production"
-            }
+            "browserTarget": "example-app-v11:build"
           }
         }
       }
     }
   },
-  "defaultProject": "PokeAppAngular"
+  "defaultProject": "example-app-v11",
+  "cli": {
+    "packageManager": "yarn"
+  }
 }
