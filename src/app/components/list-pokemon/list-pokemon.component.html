@@ -1,4 +1,4 @@
-<div class="pokemonListComponent grid-container">
+<div class="pokemonListComponent grid-container" #mesPoke>
   <div *ngFor="let pokemon of pokemons">
     <div class="pokemonCard" (click)="selectPokemon(pokemon.name)"
          [ngClass]="{'active-selected-pokemon': selectedPokemon && selectedPokemon == pokemon.name}">
